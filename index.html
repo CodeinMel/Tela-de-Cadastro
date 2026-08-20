@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="icon" type="image/jpg" href="/morango.jpg">
+    <link rel="icon" type="image/jpeg" href="morango.jpg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site de Cadastro</title>
+
     <style>
         body {
             background-color: rgb(252, 235, 252);
@@ -14,6 +15,7 @@
             padding: 50px 0;
             margin: 0;
         }
+
         #conteudo {
             max-width: 600px;
             margin: 0 auto;
@@ -22,19 +24,160 @@
             border-radius: 10px;
             box-shadow: 0 10px 50px rgb(255, 193, 245);
         }
+
         #conteudo h1 img {
             max-width: 230px;
             height: auto;
             display: inline-block;
         }
+
         .campo-grupo {
             margin: 10px 0;
             text-align: left;
             padding: 0 2%;
         }
+
         label {
             font-weight: bold;
             display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ecc0ee;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #555;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: rgb(255, 0, 242);
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #ecc0ee;
+            border-radius: 4px;
+            resize: none;
+            padding: 8px;
+            font-size: 11px;
+            color: #777;
+            background-color: #fffdfd;
+            box-sizing: border-box;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .checkbox-container input {
+            width: auto;
+        }
+
+        .btn-enviar {
+            width: 100%;
+            background-color: rgb(255, 158, 226);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .btn-enviar:hover {
+            background-color: rgb(255, 100, 210);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="conteudo">
+
+        <h2>☆ CADASTRE-SE ☆</h2>
+
+        <h1>
+            <img src="lilkitty.gif" alt="Gatinho GIF">
+        </h1>
+
+        <form action="" method="post">
+
+            <div class="campo-grupo">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="nascimento">Data de Nascimento:</label>
+                <input type="date" id="nascimento" name="nascimento" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="genero">Gênero:</label>
+                <select id="genero" name="genero" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="outro">Outro / Prefiro não dizer</option>
+                </select>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" placeholder="Insira seu e-mail" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Crie sua senha" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="confirm_password">Confirme a senha:</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Insira a senha novamente" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label>Termos de Uso do Site:</label>
+
+                <textarea readonly>Termos e Condições de Uso
+
+Ao acessar e utilizar este site de cadastro, você concorda explicitamente com o cumprimento dos seguintes termos:
+
+1. Uso de Dados: Suas informações serão armazenadas em nosso banco de dados seguro de forma privada.
+2. Segurança: Você é totalmente responsável pela confidencialidade da sua senha criada.
+3. Conduta: Não é permitido o uso de identidades falsas ou robôs para o preenchimento deste formulário.
+4. Alterações: Reservamo-nos o direito de alterar estes termos a qualquer momento, notificando os usuários ativos.
+
+Leia atentamente antes de prosseguir.</textarea>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">Li e aceito integralmente os Termos de Uso descritos acima.</label>
+            </div>
+
+            <button type="submit" class="btn-enviar">Enviar</button>
+
+        </form>
+    </div>
+</body>
+</html>            display: block;
             margin-bottom: 5px;
         }
         input[type="text"],
