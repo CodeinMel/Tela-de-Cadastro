@@ -3,37 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
+    <title>Site de Cadastro</title>
     <style>
         body {
+            background-color: rgb(252, 235, 252);
+            color: rgb(255, 158, 226);
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            text-align: center;
+            padding: 50px 0;
             margin: 0;
-            background-color: #f4f4f9;
         }
         #conteudo {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(245, 172, 241, 0.918);
-            text-align: center;
-            width: 300px;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgb(255, 193, 245);
         }
-        h1 {
+        #conteudo h1 img {
+            max-width: 230px;
+            height: auto;
+            display: inline-block;
+        }
+        .campo-grupo {
+            margin: 10px 0;
+            text-align: left;
+            padding: 0 2%;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"], 
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ecc0ee;
+            border-radius: 4px;
+            box-sizing: border-box;
+            color: #555;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: rgb(255, 0, 242);
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #ecc0ee;
+            border-radius: 4px;
+            resize: none;
+            padding: 8px;
+            font-size: 11px;
+            color: #777;
+            background-color: #fffdfd;
+            box-sizing: border-box;
+        }
+        .checkbox-container {
+            margin: 20px 0;
             display: flex;
-            justify-content: center;
             align-items: center;
-            margin: 15px 0; 
+            justify-content: center;
+            gap: 10px;
+            padding: 0 10%;
+            text-align: left;
         }
+        .checkbox-container label {
+            margin: 0;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        input[type="checkbox"] {
+            cursor: pointer;
+            accent-color: rgb(255, 0, 242);
+        }
+        button {
+            padding: 10px 40px;
+            cursor: pointer;
+            background-color: rgb(255, 184, 255);
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            color: white;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+        button:hover {
+            background-color: rgb(255, 0, 242);
+            color: rgb(253, 253, 253);
+        }
+    </style>
+</head>
+<body>
+    <div id="conteudo">
+        <h2>☆ CADASTRE-SE ☆</h2>
+        <h1><img src="lilkitty.gif" alt="Hello Kitty GIF"></h1>
+        
+        <form action="" method="post">
+            <div class="campo-grupo">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            </div>
 
-        h1 img {
-            max-width: 300px; 
-            height: auto;   
-        }
-        .form-group {
+            <div class="campo-grupo">
+                <label for="nascimento">Data de Nascimento:</label>
+                <input type="date" id="nascimento" name="nascimento" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="genero">Gênero:</label>
+                <select id="genero" name="genero" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="outro">Outro / Prefiro não dizer</option>
+                </select>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" placeholder="Insira seu e-mail" required>
+            </div>
+            
+            <div class="campo-grupo">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" placeholder="Crie sua senha" required>
+            </div>
+            
+            <div class="campo-grupo">
+                <label for="confirm_password">Confirme a senha:</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Insira a senha novamente" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label>Termos de Uso do Site:</label>
+                <textarea readonly>Termos e Condições de Uso
+
+Ao acessar e utilizar este site de cadastro, você concorda explicitamente com o cumprimento dos seguintes termos:
+
+1. Uso de Dados: Suas informações serão armazenadas em nosso banco de dados seguro de forma privada.
+2. Segurança: Você é totalmente responsável pela confidencialidade da sua senha criada.
+3. Conduta: Não é permitido o uso de identidades falsas ou robôs para o preenchimento deste formulário.
+4. Alterações: Reservamo-nos o direito de alterar estes termos a qualquer momento, notificando os usuários ativos.
+
+Leia atentamente antes de prosseguir.</textarea>
+            </div>
+            
+            <div class="checkbox-container">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">Li e aceito integralmente os Termos de Uso descritos acima.</label>
+            </div>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
             text-align: left;
             margin-bottom: 15px;
         }
